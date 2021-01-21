@@ -4,9 +4,9 @@ $ sudo apt update
 
 $ sudo apt install mongodb
 
-$ sudo systemctl start mongodb (if '/usr/bin/mongod' is not running)
+$ sudo systemctl start mongodb 
 
-$ sudo systemctl enable mongodb (ensure to automatically start it on system boot)
+$ sudo systemctl enable mongodb 
 
 
 Setting TUN device:
@@ -19,7 +19,7 @@ $ sudo apt install python3-pip python3-setuptools python3-wheel ninja-build buil
 
 Compile:
 
-$ meson build --prefix=`pwd`/install
+$ meson build --prefix=\`pwd\`/install
 
 $ ninja -C build
 
