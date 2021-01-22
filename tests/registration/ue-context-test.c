@@ -246,7 +246,7 @@ static void test1_func(abts_case *tc, void *data)
 
     pthread_mutex_lock(&s1ap_send_lock);
     test_ue->ran_ue_ngap_id --; // Due to it been increased inside below function call
-    sendbuf = testngap_build_initial_ue_message(test_ue, gmmbuf, false);
+    sendbuf = testngap_build_initial_ue_message(test_ue, gmmbuf, false, true);
     //printf("ran_ue_ngap_id: %d\n",test_ue->ran_ue_ngap_id);
     ABTS_PTR_NOTNULL(tc, sendbuf);
     rv = testgnb_ngap_send(ngap, sendbuf);

@@ -23,6 +23,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+int testngap_get_ran_ue_ngap_id(test_ue_t *test_ue, ogs_pkbuf_t *pkbuf);
+
 
 void testngap_recv(test_ue_t *test_ue, ogs_pkbuf_t *pkbuf);
 void testngap_send_to_nas(test_ue_t *test_ue, NGAP_NAS_PDU_t *nasPdu);

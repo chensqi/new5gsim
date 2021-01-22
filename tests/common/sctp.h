@@ -34,6 +34,8 @@ ogs_pkbuf_t *testsctp_read(ogs_socknode_t *node, int type);
 
 ogs_socknode_t *tests1ap_client(int family);
 ogs_socknode_t *testngap_client(int family);
+ogs_socknode_t *testngap_client_ip(int family,char *ip);
+
 
 #define testenb_s1ap_client(x) testsctp_client(x, OGS_S1AP_SCTP_PORT)
 #define testenb_s1ap_read(x) testsctp_read(x, 0);

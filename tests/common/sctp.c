@@ -125,6 +125,35 @@ ogs_socknode_t *tests1ap_client(int family)
     return node;
 }
 
+ogs_socknode_t *testngap_client_ip(int family, char *hostname)
+{
+    int rv;
+    ogs_sockaddr_t *addr = NULL;
+    ogs_socknode_t *node = NULL;
+
+    struct hostent *hostinfo;
+    hostinfo = gethostbyname(hostname);
+    test_self()->ngap_addr->hostname = hostname;
+    test_self()->ngap_addr->sin.sin_addr = *(struct in_addr*)hostinfo->h_addr;
+
+    if (family == AF_INET6)
+        ogs_copyaddrinfo(&addr, test_self()->ngap_addr6);
+    else
+        ogs_copyaddrinfo(&addr, test_self()->ngap_addr);
+
+    ogs_assert(addr);
+//printf("alili? %s\n",addr->hostname);
+    node = ogs_socknode_new(addr);
+    ogs_assert(node);
+    ogs_socknode_nodelay(node, true);
+
+    ogs_sctp_client(SOCK_STREAM, node);
+    ogs_assert(node->sock);
+
+    return node;
+}
+
+
 ogs_socknode_t *testngap_client(int family)
 {
     int rv;

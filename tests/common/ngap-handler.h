@@ -26,6 +26,13 @@ extern "C" {
 
 void testngap_handle_ng_setup_response(
         test_ue_t *test_ue, ogs_ngap_message_t *message);
+void testngap_get_ran_ue_ngap_id_downlink_nas_transport(
+        test_ue_t *test_ue, ogs_ngap_message_t *message) ;
+void testngap_get_ran_ue_ngap_id_ue_release_context_command(
+        test_ue_t *test_ue, ogs_ngap_message_t *message);
+void testngap_get_ran_ue_ngap_id_initial_context_setup_request(
+        test_ue_t *test_ue, ogs_ngap_message_t *message);
+
 
 void testngap_handle_downlink_nas_transport(
         test_ue_t *test_ue, ogs_ngap_message_t *message);

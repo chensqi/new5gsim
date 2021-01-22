@@ -445,7 +445,7 @@ void testngap_handle_pdu_session_resource_setup_request(
                                 (struct NGAP_QosFlowSetupRequestItem *)
                                 QosFlowSetupRequestList->list.array[l];
                             ogs_assert(QosFlowSetupRequestItem);
-                            qos_flow = test_qos_flow_find_by_sess_qfi(sess,
+                            qos_flow = test_qos_flow_find_by_qfi(sess,
                                     QosFlowSetupRequestItem->qosFlowIdentifier);
                             if (!qos_flow)
                                 qos_flow = test_qos_flow_add(sess);
